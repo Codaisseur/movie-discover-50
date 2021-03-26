@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function MovieItem(props) {
   // props = { movie: {actualMovieObj} }
   return (
@@ -8,7 +10,10 @@ export default function MovieItem(props) {
         boxSizing: "border-box",
       }}
     >
-      <strong>{props.movie.Title}</strong> ({props.movie.imdbID})
+      <Link to={`/discover/${props.movie.imdbID}`}>
+        <strong>{props.movie.Title}</strong>
+      </Link>{" "}
+      ({props.movie.imdbID})
       <img
         src={props.movie.Poster}
         alt={props.movie.Title}
